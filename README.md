@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+## Lazor Project Group10 -- Welcome to the CPW Lazor App Solver
 
-You can use the [editor on GitHub](https://github.com/waynemonteiro97/Lazor_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Here we will attempt to solve the toughest boards you dare to throw at us with our humble yet efficient code.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### How do you use it?
 
-```markdown
-Syntax highlighted code block
+If you're having trouble solving a particular board, dont worry, just get it into a .bff file. 
+The .bff file should contain:
 
-# Header 1
-## Header 2
-### Header 3
+Comments that help you understand the contents of the file
+The position of blocks and empty movable positions in a grid form
+Number and types of blocks where:
 
-- Bulleted
-- List
+A - fixed reflect block 
+B - fixed opaque block
+C - fixed refract block
+L - Laser coordinates (origin and direction) 
+P - Hole/sink coordinates
 
-1. Numbered
-2. List
+Once you've made your .bff file use the (insert final file name here) to solve it. Insert the file name in line (insert line number here).
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+### How does our method work?
+The way the code solves a particular board is as such:
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+We designed a grid for a given board, with each block in the board being a middle point on the block in a grid (like a block surrounded by x's).
 
-### Jekyll Themes
+x x x\
+x o x\
+x x x\
+This is one block of the grid portraying one block of the board.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/waynemonteiro97/Lazor_project/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+The Block function in the class Grid will create a random permutation of the available blocks and movable spaces in the grid and give this permuation to the lazor_path function to solve it. The axes are : horizontal direction is the x axis and vertical deriction is the y axis. The lazor_path checks if for the the given placement of blocks all the lazors hit all the sinks/ holes or not. As soon as it comes across the right grid,the simulation stops and it prints out the correct grid which is the solution to the board.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+### For you lazy bones out there:
+
+For visual appeal we generated a GUI image (which will be saved in the same directory along with a txt file called solution_textfile.txt with the same information) for the solution where: dark grey blocks as - empty positions (o's) white blocks as - reflect blocks (A's) black blocks as - absorb blocks (B's) cyan blocks as - refract blocks (C's)
+
+Your board should be solved in a maximum of 2 min. Bigger or more complicated boards take longer time. Have fun cheater! (no offense!)
+
+
+
